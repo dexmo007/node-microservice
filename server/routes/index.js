@@ -1,9 +1,12 @@
 import express from 'express';
+
 let router = express.Router();
 
-router.get('/', function(req, res, next) {
+router.get('/HelloWorld', function (req, res, next) {
     console.log("Hello World");
-    res.status(200).send({"test": "test"});
+    res.status(200).json({"test": "test"});
 });
+
+export const helloWorld = () => 'HelloWorld';
 
 export default router;
