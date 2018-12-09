@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "build": "rimraf dist/ && babel server -d dist",
-    "start": "yarn build && node dist/server.js",
-    "test": "mocha --recursive --require @babel/register"
+    "start": "nodemon --watch server/ --exec babel-node -- server/server.js",
+    "test": "mocha --recursive --require @babel/register",
+    "serve": "yarn build && node dist/server.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -17,11 +18,13 @@
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
+    "@babel/node": "^7.2.0",
     "@babel/preset-env": "^7.1.6",
     "@babel/register": "^7.0.0",
     "chai": "^4.2.0",
     "http-status": "^1.3.1",
     "mocha": "^5.2.0",
+    "nodemon": "^1.18.7",
     "rimraf": "^2.6.2",
     "supertest": "^3.3.0"
   }

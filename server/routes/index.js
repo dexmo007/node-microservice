@@ -4,7 +4,7 @@ let router = express.Router();
 
 router.get('/HelloWorld', function (req, res, next) {
     console.log("Hello World");
-    res.status(200).json({"test": "test"});
+    res.status(200).json({"test": "testing test"});
 });
 
 export const helloWorld = () => 'HelloWorld';
